@@ -7,7 +7,7 @@ namespace PaymentProcessor.Api
     {
         public static void Register(HttpConfiguration config)
         {
-            config.EnableCors(new EnableCorsAttribute("http://localhost:50016", "*", "*"));
+            config.EnableCors(new EnableCorsAttribute("http://localhost:60125", "*", "*"));
 
             config.MapHttpAttributeRoutes();
 

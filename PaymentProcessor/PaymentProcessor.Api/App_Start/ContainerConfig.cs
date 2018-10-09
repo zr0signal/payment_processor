@@ -26,6 +26,7 @@ namespace PaymentProcessor.Api
             builder.RegisterType<PaymentGatewayPremium>().As<IPaymentGatewayPremium>();
             builder.RegisterType<PaymentValidator>().As<IPaymentValidator>();
             builder.RegisterType<CreditCardValidator>().As<ICreditCardValidator>();
+            builder.RegisterType<ExternalProcessor1>().As<IExternalProcessor>();
 
             var container = builder.Build();
 

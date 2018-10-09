@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Payment Processor</title>
+    <link href="/default.css" type="text/css" rel="stylesheet" />
+    <!--<script src="/Scripts/angular.min.js"></script>-->
+</head>
+<body>
+    <h2>Payment Processor</h2>
+    <div class="container">
+        <div ng-app>
+            <div ng-controller="TransactionController">
+                <form novalidate class="transaction-form">
+                    <div class="form_row">
+                        <label>Short number:</label>
+                        <input type="text" ng-model="transaction.CreditCardNumber" name="ShortNumber" placeholder="Eg: 1234" />
+                    </div>
+                    <div class="form_row">
+                        <label>Card holder:</label>
+                        <input type="text" ng-model="transaction.CardHolder" name="CardHolder" placeholder="Eg: Your name" />
+                    </div>
+                    <div class="form_row">
+                        <label>Expiration date:</label>
+                        <input type="date" ng-model="transaction.ExpirationDate" name="ExpirationDate" placeholder="Eg: 2030-01-23" />
+                    </div>
+                    <div class="form_row">
+                        <label>Security code:</label>
+                        <input type="number" ng-model="transaction.SecurityCode" name="SecurityCode" placeholder="Eg: 345" />
+                    </div>
+                    <div class="form_row">
+                        <label>Amount:</label>
+                        <input type="number" ng-model="transaction.Amount" name="Amount" placeholder="Eg: 50" />
+                    </div>
+                    <div class="form_response">
+
+                    </div>
+                    <!--<div class="form_buttons">
+                        <input type="button" ng-click="reset()" value="Reset" />
+                        <input type="submit" ng-click="update(transaction)" value="Save" />
+                    </div>-->
+                    <div class="form_buttons">
+                        <input type="submit" value="Process" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+</html>

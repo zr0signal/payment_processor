@@ -29,6 +29,8 @@ namespace PaymentProcessor.Api.Controllers
             }))
             {
                 var logic = scope.Resolve<IPaymentProcessorLogic>();
+
+                // This can easily take an ILogger so we can have something more than just "OK"
                 logic.ProcessPayment(payment);
             }
 

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PaymentProcessor.Api.Models
 {
-    // TODO: add validation
+    // TODO: add validation with custom attributes for CreditCardNumber, ExpirationDate, SecurityCode, Amount
     public class TransactionDetails
     {
         [Required]
