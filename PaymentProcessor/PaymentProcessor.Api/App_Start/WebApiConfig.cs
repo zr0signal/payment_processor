@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace PaymentProcessor.Api
 {
@@ -9,9 +7,8 @@ namespace PaymentProcessor.Api
     {
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
+            config.EnableCors(new EnableCorsAttribute("http://localhost:50016", "*", "*"));
 
-            // Web API routes
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
