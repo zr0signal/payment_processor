@@ -12,17 +12,19 @@ namespace PaymentProcessor.Bussiness.Tests.Gateway
         private IPaymentGatewayExpensive subject;
         private Mock<IPaymentValidator> paymentValidatorMock;
         private Mock<IPaymentGatewayCheap> paymentGatewayCheapMock;
+        private Mock<IExternalProcessor> externalProcessorMock;
 
         [SetUp]
         public void SetUp()
         {
             paymentValidatorMock = new Mock<IPaymentValidator>();
             paymentGatewayCheapMock = new Mock<IPaymentGatewayCheap>();
+            externalProcessorMock = new Mock<IExternalProcessor>();
 
             paymentValidatorMock.Setup(x => x.ValidatePayment(It.IsAny<Payment>())).Returns(true);
             paymentGatewayCheapMock.Setup(x => x.ProcessPayment(true)).Verifiable();
 
-            subject = new PaymentGatewayExpensive(paymentGatewayCheapMock.Object, paymentValidatorMock.Object);
+            subject = new PaymentGatewayExpensive(paymentGatewayCheapMock.Object, paymentValidatorMock.Object, externalProcessorMock.Object);
         }
 
         [Test]

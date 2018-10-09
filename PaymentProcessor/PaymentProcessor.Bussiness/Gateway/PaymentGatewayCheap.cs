@@ -1,7 +1,6 @@
 ﻿using PaymentProcessor.Bussiness.Entities;
 using PaymentProcessor.Bussiness.Utilities;
 using System;
-using System.Threading;
 
 namespace PaymentProcessor.Bussiness.Gateway
 {
@@ -10,10 +9,12 @@ namespace PaymentProcessor.Bussiness.Gateway
         public Payment Payment { get; set; }
 
         private readonly IPaymentValidator _paymentValidator;
+        private readonly IExternalProcessor _external;
 
-        public PaymentGatewayCheap(IPaymentValidator paymentValidator)
+        public PaymentGatewayCheap(IPaymentValidator paymentValidator, IExternalProcessor external)
         {
             _paymentValidator = paymentValidator;
+            _external = external;
         }
 
         public void ProcessPayment(bool skipGatewayValidation = false)
@@ -22,8 +23,8 @@ namespace PaymentProcessor.Bussiness.Gateway
             {
                 throw new Exception("ProcessPayment_InvalidPayment");
             }
-            
-            Thread.Sleep(10);
+
+            _external.Process();
         }
 
         public bool ValidatePaymentForGateway()

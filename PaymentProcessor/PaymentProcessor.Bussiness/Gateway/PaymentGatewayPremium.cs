@@ -10,10 +10,12 @@ namespace PaymentProcessor.Bussiness.Gateway
         public Payment Payment { get; set; }
 
         private readonly IPaymentValidator _paymentValidator;
+        private readonly IExternalProcessor _external;
 
-        public PaymentGatewayPremium(IPaymentValidator paymentValidator)
+        public PaymentGatewayPremium(IPaymentValidator paymentValidator, IExternalProcessor external)
         {
             _paymentValidator = paymentValidator;
+            _external = external;
         }
 
         public void ProcessPayment(bool skipGatewayValidation = false)
@@ -41,7 +43,7 @@ namespace PaymentProcessor.Bussiness.Gateway
 
         private void PrivateProcessing()
         {
-            Thread.Sleep(10);
+            _external.Process();
         }
     }
 }
