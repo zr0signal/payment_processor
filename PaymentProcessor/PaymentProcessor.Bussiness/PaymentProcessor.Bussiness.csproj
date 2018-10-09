@@ -41,7 +41,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\CreditCard.cs" />
+    <Compile Include="Entities\Payment.cs" />
+    <Compile Include="Gateway\IPaymentGatewayCheap.cs" />
+    <Compile Include="Gateway\IPaymentGatewayExpensive.cs" />
+    <Compile Include="Gateway\IPaymentGatewayPremium.cs" />
+    <Compile Include="Gateway\IPaymentGateway.cs" />
+    <Compile Include="Gateway\IRetryPayment.cs" />
+    <Compile Include="Gateway\PaymentGatewayExpensive.cs" />
+    <Compile Include="Gateway\PaymentGatewayPremium.cs" />
+    <Compile Include="Gateway\PaymentGatewayCheap.cs" />
+    <Compile Include="PaymentProcessorLogic.cs" />
+    <Compile Include="IPaymentProcessorLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\PaymentValidator.cs" />
+    <Compile Include="Utilities\CreditCardValidator.cs" />
+    <Compile Include="Utilities\IPaymentValidator.cs" />
+    <Compile Include="Utilities\ICreditCardValidator.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
