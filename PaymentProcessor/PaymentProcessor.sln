@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentProcessor.Api", "PaymentProcessor.Api\PaymentProcessor.Api.csproj", "{E451F7DA-9002-4158-8A96-243FBBA47985}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentProcessor.Bussiness", "PaymentProcessor.Bussiness\PaymentProcessor.Bussiness.csproj", "{D1CF11F6-8BCE-4897-8DC1-DFD3769DD36F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentProcessor.Bussiness.Tests", "PaymentProcessor.Bussiness.Tests\PaymentProcessor.Bussiness.Tests.csproj", "{D6AB094B-D83F-4EB2-A5CF-05CB3DAD3DB3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{E451F7DA-9002-4158-8A96-243FBBA47985}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E451F7DA-9002-4158-8A96-243FBBA47985}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E451F7DA-9002-4158-8A96-243FBBA47985}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1CF11F6-8BCE-4897-8DC1-DFD3769DD36F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1CF11F6-8BCE-4897-8DC1-DFD3769DD36F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1CF11F6-8BCE-4897-8DC1-DFD3769DD36F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1CF11F6-8BCE-4897-8DC1-DFD3769DD36F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6AB094B-D83F-4EB2-A5CF-05CB3DAD3DB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6AB094B-D83F-4EB2-A5CF-05CB3DAD3DB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6AB094B-D83F-4EB2-A5CF-05CB3DAD3DB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6AB094B-D83F-4EB2-A5CF-05CB3DAD3DB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
