@@ -3,7 +3,6 @@ using PaymentProcessor.Api.Models;
 using PaymentProcessor.Bussiness;
 using PaymentProcessor.Bussiness.Entities;
 using PaymentProcessor.Bussiness.Gateway;
-using System;
 using System.Web.Http;
 using System.Web.Http.Description;
 
@@ -22,7 +21,7 @@ namespace PaymentProcessor.Api.Controllers
             }
 
             var payment = GetPaymentFromDetails(transactionDetails);
-            var gatewayType = GetGatewayTypeFromAmount(payment.Amount);
+            var gatewayType = GatewayType.GetGatewayTypeFromAmount(payment.Amount);
 
             using (var scope = ContainerConfig.Container.BeginLifetimeScope(x => 
             {
@@ -51,22 +50,6 @@ namespace PaymentProcessor.Api.Controllers
                 CreditCard = card,
                 Amount = transactionDetails.Amount
             };
-        }
-
-        private Type GetGatewayTypeFromAmount(decimal amount)
-        {
-            if (amount <= 20)
-            {
-                return typeof(PaymentGatewayCheap);
-            }
-            else if (amount <= 500)
-            {
-                return typeof(PaymentGatewayExpensive);
-            }
-            else
-            {
-                return typeof(PaymentGatewayPremium);
-            }
         }
     }
 }

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Entities\CreditCard.cs" />
     <Compile Include="Entities\Payment.cs" />
+    <Compile Include="GatewayType.cs" />
     <Compile Include="Gateway\IPaymentGatewayCheap.cs" />
     <Compile Include="Gateway\IPaymentGatewayExpensive.cs" />
     <Compile Include="Gateway\IPaymentGatewayPremium.cs" />

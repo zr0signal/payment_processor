@@ -51,6 +51,7 @@ namespace PaymentProcessor.Bussiness.Tests.Gateway
             };
 
             Assert.IsFalse(subject.ValidatePaymentForGateway());
+            Assert.IsFalse(GatewayType.GetGatewayTypeFromAmount(amount) == typeof(PaymentGatewayExpensive));
         }
 
         [TestCase(21)]
@@ -65,6 +66,7 @@ namespace PaymentProcessor.Bussiness.Tests.Gateway
             };
 
             Assert.IsTrue(subject.ValidatePaymentForGateway());
+            Assert.IsTrue(GatewayType.GetGatewayTypeFromAmount(amount) == typeof(PaymentGatewayExpensive));
         }
     }
 }
